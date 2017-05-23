@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+ name: dp-delay-test
+ namespace: application
+spec:
+ replicas: 2
+ template:
+  metadata:
+   labels:
+    service: http-test 
+  spec:
+   containers:
+   - name: http-delayed-test
+     imagePullPolicy: Always
+     image: beinnova/delayed-server:0.4 
+     env:
+      - name: SERVER_NUMBER
+        value: "SERVER"
+     ports:
+      - containerPort: 80
