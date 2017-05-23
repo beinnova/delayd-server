@@ -1,7 +1,7 @@
 'use strict';
 const client = require('request');
-const SERVER_URL = "http://104.155.65.75:31000/api/delay";
-//const SERVER_URL = "http://localhost:8080/api/delay";
+//const SERVER_URL = "http://104.155.65.75:31000/api/delay";
+const SERVER_URL = "http://localhost:8080/api/delay";
 const COUNTER_LIMIT = 10;
 const CLIENT_NUMBER = process.argv[2] || 1;
 const CLIENT_LIMIT = process.argv[3] || 100; 

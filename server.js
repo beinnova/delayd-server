@@ -19,7 +19,8 @@ function HandlerFunction(request, reply) {
 	(() => {
 		let requestNumber = request.params.requestNumber;
 		let rep = {
-			server: process.env.SERVER_NUMBER || '*',
+			server: server.info.host,
+			version: process.env.BUILD_VERSION || 'No version', 
 			requestNumber: requestNumber
 		}
 		process.nextTick(() => {
