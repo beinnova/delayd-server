@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: svc-http-test
+spec:
+ ports:
+  - protocol: TCP
+    port: 8080
+    nodePort: 31000
+ type: NodePort
+ selector:
+  service: http-test 

@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: test-server-1
+ labels:
+  service: http-test
+spec:
+ containers:
+ - name: test-server-1
+   image: beinnova/delayed-server:0.4
+   env:
+   - name: SERVER_NUMBER
+     value: "1"      
+   ports:
+   - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: test-server-2
+ labels:
+  service: http-test
+spec:
+ containers:
+ - name: test-server-2
+   image: beinnova/delayed-server:0.4
+   env:
+   - name: SERVER_NUMBER
+     value: "2"      
+   ports:
+   - containerPort: 80
